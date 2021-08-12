@@ -361,7 +361,11 @@ void setTrapOnComExportCount() {
 #if ver < 8.3
         "core82.dll"
 #else
+        #if learn=1
+        "core83t.dll"
+        #else
         "core83.dll"
+        #endif
 #endif
     #if x86
         , "?com_exported_count@core@@YAIXZ",

@@ -7,7 +7,11 @@
 #if ver < 8.3
 	core82.dll
 #else
+	#if learn=1
+	core83t.dll
+	#else
 	core83.dll
+	#endif
 #endif
 	//void ctor(const Point&in, const Point&in)|??0Rect@core@@QAE@ABUtagPoint@@0@Z
 	//void ctor(const Point&in, const Size&in)|??0Rect@core@@QAE@ABUtagPoint@@ABUtagSIZE@@@Z
@@ -24,6 +28,10 @@
 #if ver < 8.3
 	core82.dll
 #else
+	#if learn=1
+	core83t.dll
+	#else
 	core83.dll
+	#endif
 #endif
 	prop Rect kEmptyRect|?kEmptyRect@core@@3URect@1@B

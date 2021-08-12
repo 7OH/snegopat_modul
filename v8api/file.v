@@ -98,7 +98,11 @@
 #if ver < 8.3
     core82.dll
 #else
+    #if learn=1
+    core83t.dll
+    #else
     core83.dll
+    #endif
 #endif
 	uint64 copy_file(IFile& dst, IFile& src, uint64 size)|?copy_file@core@@YA_KPAVIFile@1@0_K@Z|?copy_file@core@@YA_KPEAVIFile@1@0_K@Z
 :meths

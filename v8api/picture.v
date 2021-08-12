@@ -27,7 +27,11 @@
 	  #if ver < 8.3
 		core82.dll
 	  #else
+		#if learn=1
+		core83t.dll
+		#else
 		core83.dll
+		#endif
 	  #endif
 		void ctor()|??0V8Picture@core@@QAE@XZ|??0V8Picture@core@@QEAA@XZ
 		bool compareAttribs(const V8Picture&in)const|?compareAttribs@V8Picture@core@@QBE_NABV12@@Z|?compareAttribs@V8Picture@core@@QEBA_NAEBV12@@Z

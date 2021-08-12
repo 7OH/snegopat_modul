@@ -12,7 +12,11 @@
 #if ver < 8.3
 	core82.dll
 #else
+	#if learn=1
+	core83t.dll
+	#else
 	core83.dll
+	#endif
 #endif
 	void ctor(const URL&in)|??0URL@core@@QAE@ABV01@@Z|??0URL@core@@QEAA@AEBV01@@Z
 	void ctor()|??0URL@core@@QAE@XZ|??0URL@core@@QEAA@XZ
@@ -45,7 +49,11 @@
 #if ver < 8.3
 	core82.dll
 #else
+	#if learn=1
+	core83t.dll
+	#else
 	core83.dll
+	#endif
 #endif
 #if ver < 8.3.11
 	v8string Url_unescape(const v8string&in)|?unescape@URL@core@@SA?AV?$basic_string@_WV?$char_traits@_W@stlp_std@@V?$allocator@_W@2@@stlp_std@@ABV34@@Z

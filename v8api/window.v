@@ -415,7 +415,11 @@
 #if ver >= 8.3.12
 :service Window {00000000-0000-0000-0000-000000000000}
 :dlls
+	#if learn=1
+	wbase83t.dll
+	#else
 	wbase83.dll
+	#endif
 
 	void GetClientRect(tagRECT&)|?GetClientRect@BaseWindow@wbase@@QBEXPAUtagRECT@@@Z|?GetClientRect@BaseWindow@wbase@@QEBAXPEAUtagRECT@@@Z
 	void GetWindowRect(tagRECT&)|?GetWindowRect@BaseWindow@wbase@@QBEXPAUtagRECT@@@Z|?GetWindowRect@BaseWindow@wbase@@QEBAXPEAUtagRECT@@@Z
@@ -441,7 +445,11 @@
 
 :global
 :dlls
+	#if learn=1
+	wbase83t.dll
+	#else
 	wbase83.dll
+	#endif
 	IWindow& get_focus(void)|?get_focus@wbase@@YAPAVIWindow@1@XZ|?get_focus@wbase@@YAPEAVIWindow@1@XZ
 
   #if x86 = 1

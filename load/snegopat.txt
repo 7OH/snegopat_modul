@@ -4,3 +4,10 @@ proc   = 1cv8.exe
 test   = test.dll, isNeedLoad
 ;defs   =
 ;args   =
+
+[snegopat_ide_learn]
+modul  = Snegopat
+proc   = 1cv8t.exe
+test   = test.dll, isNeedLoad
+defs   = learn=1
+args   =

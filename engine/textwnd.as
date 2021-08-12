@@ -496,7 +496,11 @@ class TextWnd {
             IFramedView&& fv = ted.unk;
             trFrameViewActivate.setTrap(&&fv, IFramedView_onActivate, TextWnd_Activate);
             // Поставим перехват на детач окна, чтобы освобождать наши ресурсы, связанные с ним
+            #if learn=1
+            trWindowDetach.setTrapByName("wbase83t.dll",
+            #else
             trWindowDetach.setTrapByName("wbase83.dll",
+            #endif
             #if x86
                 "?detach@Window@wbase@@QAEXXZ"
             #else
@@ -505,7 +509,11 @@ class TextWnd {
                 , asCALL_THISCALL, Window_DetachTrap);
                                                         
             // Ставим перехват на роутинг виндовых сообщений для работы контекстной подсказки.
+            #if learn=1
+            trDispatchMsg.setTrapByName("wbase83t.dll",
+            #else
             trDispatchMsg.setTrapByName("wbase83.dll",
+            #endif
             #if x86
                 "?dispatch_msg@wbase@@YAXABUtagMSG@@PAVIMsgDispHook@1@@Z"
             #else
@@ -888,7 +896,11 @@ void initTextModifiedTraps() {
     #if ver<8.3
         string dll = "core82.dll";
     #else
+        #if learn=1
+        string dll = "core83t.dll";
+        #else
         string dll = "core83.dll";
+        #endif
     #endif
     #if ver < 8.3.11
         trSetSelText.setTrapByName(dll, "?setSelectText@TextManager@core@@QAEXPB_W_N@Z", asCALL_THISCALL, setSelectText_trap);

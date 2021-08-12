@@ -8,7 +8,11 @@
 #if ver < 8.3
 	core82.dll
 #else
+	#if learn=1
+	core83t.dll
+	#else
 	core83.dll
+	#endif
 #endif
 	void dtor()|??1TypeDomainPattern@core@@QAE@XZ|??1TypeDomainPattern@core@@QEAA@XZ
 	void ctor(const Guid&)|??0TypeDomainPattern@core@@QAE@ABU_GUID@@@Z|??0TypeDomainPattern@core@@QEAA@AEBU_GUID@@@Z

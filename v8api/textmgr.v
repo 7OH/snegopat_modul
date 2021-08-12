@@ -10,7 +10,11 @@
 #if ver < 8.3
 	core82.dll
 #else
+	#if learn=1
+	core83t.dll
+	#else
 	core83.dll
+	#endif
 #endif
 	void ctor(const TextPosition&in)|??0TextPosition@core@@QAE@ABV01@@Z|??0TextPosition@core@@QEAA@AEBV01@@Z
 	//TextPosition(const LabelData&in)|??0TextPosition@core@@QAE@ABVLabelData@1@@Z
@@ -35,7 +39,11 @@
 #if ver < 8.3
 	core82.dll
 #else
+	#if learn=1
+	core83t.dll
+	#else
 	core83.dll
+	#endif
 #endif
 	//void ctor()|??0TextManager@core@@QAE@XZ
 	//void dtor()|??1TextManager@core@@UAE@XZ
@@ -81,7 +89,11 @@
 #if ver < 8.3
 	core82.dll
 #else
+	#if learn=1
+	core83t.dll
+	#else
 	core83.dll
+	#endif
 #endif
 	void ctor()|??0LocalWString@core@@QAE@XZ|??0LocalWString@core@@QEAA@XZ
 #if ver < 8.3.11

@@ -12,7 +12,11 @@
 #if ver < 8.3
 	core82.dll
 #else
+	#if learn=1
+	core83t.dll
+	#else
 	core83.dll
+	#endif
 #endif
 	void ctor()|??0CompositeID@core@@QAE@XZ|??0CompositeID@core@@QEAA@XZ
 	void ctor(const Guid&)|??0CompositeID@core@@QAE@ABU_GUID@@@Z|??0CompositeID@core@@QEAA@AEBU_GUID@@@Z

@@ -338,14 +338,22 @@ funcdef int_ptr FuncGetFocus();
 
 void initFocusTrap() {
     if (trFocusTrap.state == trapNotActive) {
+        #if learn=1
+        string dll = "wbase83t.dll";
+        #else
         string dll = "wbase83.dll";
+        #endif
         trFocusTrap.setTrapByName(dll, "?set_focus@wbase@@YAXPAVIWindow@1@@Z", asCALL_CDECL, SetFocusTrap);
     } else if (trFocusTrap.state == trapDisabled) {
         trFocusTrap.swap();
     }
 
     if (trGetFocusTrap.state == trapNotActive) {
+        #if learn=1
+        string dll = "wbase83t.dll";
+        #else
         string dll = "wbase83.dll";
+        #endif
         trGetFocusTrap.setTrapByName(dll, "?get_focus@wbase@@YAPAVIWindow@1@XZ", asCALL_CDECL, GetFocusTrap);
     } else if (trGetFocusTrap.state == trapDisabled) {
         trGetFocusTrap.swap();
@@ -397,7 +405,11 @@ void initResizeTraps() {
     #if ver<8.3
         string dll = "wbase82.dll";
     #else
+        #if learn=1
+        string dll = "wbase83t.dll";
+        #else
         string dll = "wbase83.dll";
+        #endif
     #endif
         trResizeTrap.setTrapByName(dll, "?reposition@BaseWindow@wbase@@QAEXABVZPos@2@PBURect@core@@H@Z", asCALL_THISCALL, TopLevelWindowOnSize);
     } else if (trResizeTrap.state == trapDisabled) {
@@ -408,7 +420,11 @@ void initResizeTraps() {
     #if ver<8.3
         string dll = "wbase82.dll";
     #else
+        #if learn=1
+        string dll = "wbase83t.dll";
+        #else
         string dll = "wbase83.dll";
+        #endif
     #endif
         trReposition.setTrapByName(dll, "?reposition@BaseWindow@wbase@@QAEXABVZPos@2@PBURect@core@@H@Z", asCALL_THISCALL, V8RepositionTrap);
     } else if (trReposition.state == trapDisabled) {
@@ -462,7 +478,11 @@ void initTextAreaModifiedTraps() {
     #if ver<8.3
         string dll = "core82.dll";
     #else
+        #if learn=1
+        string dll = "core83t.dll";
+        #else
         string dll = "core83.dll";
+        #endif
     #endif
         trTextAreaModified.setTrapByName(dll, "?onTextAreaModified@TextManager@core@@UAEX_NABVTextPosition@2@111@Z", asCALL_THISCALL, textAreaModified_trap);
     } else if (trTextAreaModified.state == trapDisabled) {
@@ -502,7 +522,11 @@ void initCaretSelectionTraps() {
     #if ver<8.3
         string dll = "core82.dll";
     #else
+        #if learn=1
+        string dll = "core83t.dll";
+        #else
         string dll = "core83.dll";
+        #endif
     #endif
         trCaretSelection.setTrapByName(dll, "?onSelectionRecalculateFinished@TextManager@core@@UAEXXZ", asCALL_THISCALL, onSelectionRecalculateFinished_trap);
     } else if (trCaretSelection.state == trapDisabled) {
@@ -510,7 +534,11 @@ void initCaretSelectionTraps() {
     }
 #if ver >= 8.3.12
     if (trSetCaretPos.state == trapNotActive) {
+        #if learn=1
+        string dll = "wbase83t.dll";
+        #else
         string dll = "wbase83.dll";
+        #endif
         trSetCaretPos.setTrapByName(dll, "?SetCaretPos@BaseWindow@wbase@@QAEHHH@Z", asCALL_THISCALL, SetCaretPos_trap);
     } else if (trSetCaretPos.state == trapDisabled) {
         trSetCaretPos.swap();

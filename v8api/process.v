@@ -35,7 +35,11 @@
 #if ver < 8.3
     core82.dll
 #else
+    #if learn=1
+    core83t.dll
+    #else
     core83.dll
+    #endif
 #endif
     SCOM_Process@ currentProcess()|?current_process@core@@YAPAVSCOM_Process@1@XZ|?current_process@core@@YAPEAVSCOM_Process@1@XZ
 	void val2var(const Value&, Variant&)|?value_to_variant_val@core@@YAXABVGenericValue@1@AAUtagVARIANT@@@Z|?value_to_variant_val@core@@YAXAEBVGenericValue@1@AEAUtagVARIANT@@@Z
@@ -58,7 +62,11 @@
 	int_ptr malloc(size_t)|?__stl_new@stlp_std@@YAPAXI@Z
 	void free(int_ptr)|?__stl_delete@stlp_std@@YAXPAX@Z
 #elif ver < 8.3.11
+	#if learn=1
+	nuke83t.dll
+	#else
 	nuke83.dll
+	#endif
 	int_ptr malloc(size_t)|?alloc@details@nuke@@YAPAXI@Z
 	void free(int_ptr)|?free@details@nuke@@YAXPAX@Z
 #else
